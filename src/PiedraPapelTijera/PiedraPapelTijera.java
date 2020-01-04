@@ -22,6 +22,7 @@ public class PiedraPapelTijera
 		switch (opcMenu)
 		{
 		case 1:
+
 			System.out.println("Comienza el juego.");
 			System.out.println("¿Quieres jugar con un amig@ (Pulsa 1), o contra la CPU? (Pulsa 2)");
 			opcMenu = teclado.nextInt();
@@ -223,15 +224,20 @@ public class PiedraPapelTijera
 
 					System.out.println("¿Quieres jugar otra ronda? (S/N)");
 					opcion = teclado.next();
-					if (!opcion.equals("N") || opcion.equals("n"))
+					switch (opcion)
 					{
-
-					}
-					if (opcion.equals("N") || opcion.equals("n"))
-					{
+					case "N":
 						System.out.println("El juego ha terminado. ¡Gracias por jugar! :)");
-						System.exit(0);
+						break;
+					case "n":
+						System.out.println("El juego ha terminado. ¡Gracias por jugar! :)");
+						break;
+
+					default:
+						System.out.println("No has elegido una opción correcta. El juego ha terminado.");
+						break;
 					}
+
 				} while (opcion.equals("S") || opcion.equals("s"));
 				break;
 			}
